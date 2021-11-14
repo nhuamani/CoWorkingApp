@@ -33,7 +33,7 @@ namespace CoWorkingApp.Data
 
         }
 
-        public bool SaveCollection(T collection)
+        public bool SaveCollection(List<T> collection)
         {
             string collectionPath = $@"{Directory.GetCurrentDirectory()}/{typeof(T)}.json";
 

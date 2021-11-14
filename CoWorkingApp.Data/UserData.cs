@@ -22,14 +22,26 @@ namespace CoWorkingApp.Data
 
             if(!userCollection.Any(p => p.Name == "ADMIN" && p.LastName == "ADMIN" && p.Email == "ADMIN"))
             {
-                var adminUser = new User()
+                try
                 {
-                    Name = "ADMIN",
-                    LastName = "ADMIN",
-                    Email = "ADMIN",
-                    UserId = Guid.NewGuid(),
-                    Password = EncryptData.EncryptText("ADMIN")
-                };
+                    var adminUser = new User()
+                    {
+                        Name = "ADMIN",
+                        LastName = "ADMIN",
+                        Email = "ADMIN",
+                        UserId = Guid.NewGuid(),
+                        Password = EncryptData.EncryptText("ADMIN")
+                    };
+
+                    userCollection.Add(adminUser);
+                    jsonManager.SaveCollection(userCollection);
+                }
+                catch (System.Exception ex)
+                {
+                    return false;
+                }
+
+                return true;
             }
 
             return true;

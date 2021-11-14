@@ -4,7 +4,7 @@ namespace CoWorkingApp.Model
 {
     public class User
     {
-        public Guid UseId { get; set; }
+        public Guid UserId { get; set; }
         public String Name { get; set; }
         public String LastName { get; set; }
         public String Email { get; set; }

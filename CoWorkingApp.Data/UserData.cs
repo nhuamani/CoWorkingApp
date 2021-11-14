@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using CoWorkingApp.Model;
 
 namespace CoWorkingApp.Data
@@ -11,6 +13,25 @@ namespace CoWorkingApp.Data
         public UserData()
         {
             jsonManager = new JsonManager<User>();
+        }
+
+        public bool CreateAdmin()
+        {
+            var userCollection = jsonManager.GetCollection();
+
+            if(!userCollection.Any(p => p.Name == "ADMIN" && p.LastName == "ADMIN" && p.Email == "ADMIN"))
+            {
+                var adminUser = new User()
+                {
+                    Name = "ADMIN",
+                    LastName = "ADMIN",
+                    Email = "ADMIN",
+                    UserId = Guid.NewGuid(),
+                    Password = "ADMIN"
+                };
+            }
+
+            return true;
         }
 
     }

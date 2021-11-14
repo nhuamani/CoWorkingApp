@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using CoWorkingApp.Data.Helpers;
 using CoWorkingApp.Model;
 
 namespace CoWorkingApp.Data
@@ -27,7 +28,7 @@ namespace CoWorkingApp.Data
                     LastName = "ADMIN",
                     Email = "ADMIN",
                     UserId = Guid.NewGuid(),
-                    Password = "ADMIN"
+                    Password = EncryptData.EncryptText("ADMIN")
                 };
             }
 

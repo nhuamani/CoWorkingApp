@@ -14,18 +14,11 @@ namespace CoWorkingApp.Data
             // Create New List Temp
             List<T> myCollection = new List<T>();
 
-            // Create var string Empty
-            string currentContent = string.Empty;
-
-            // Read file.json if exist || writter(create) if not exist
             if(File.Exists(collectionPath))
             {
-                // Read file
                 var streamReader = new StreamReader(collectionPath);
-                currentContent = streamReader.ReadToEnd();
-
-                // Transform string to Json
-                myCollection = JsonConvert.DeserializeObject<List<T>>(currentContent);
+                var currentContent = streamReader.ReadToEnd();
+                myCollection = JsonConvert.DeserializeObject<List<T>>(currentContent); // Transform string to Json
                 streamReader.Close(); // Good practica
             }
             else
@@ -47,7 +40,7 @@ namespace CoWorkingApp.Data
             try
             {
                 var streamWritter = new StreamWriter(collectionPath);
-                var jsonCollection = JsonConvert.SerializeObject(collection);
+                var jsonCollection = JsonConvert.SerializeObject(collection); // Transform string to Json
                 streamWritter.WriteLine(jsonCollection);
                 streamWritter.Close();
             }

@@ -1,6 +1,7 @@
 # Console App .Net Core
 
 ## Create App
+
 ```bash
 # Root directory
 mkdir CoWorkingApp

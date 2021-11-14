@@ -1,4 +1,5 @@
 ﻿using System;
+using CoWorkingApp.Data;
 
 namespace CoWorkingApp.App
 {
@@ -6,6 +7,9 @@ namespace CoWorkingApp.App
     {
         static void Main(string[] args)
         {
+            var userData = new UserData();
+            userData.CreateAdmin();
+            
             Console.WriteLine("Hello World!");
         }
     }

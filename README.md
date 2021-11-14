@@ -1,4 +1,4 @@
-# Console App .Net Core
+# Console App .NET Core
 
 ## Create App
 
@@ -53,3 +53,7 @@ dotnet add reference ../CoWorkingApp.Model/CoWorkingApp.Model.csproj
 # Add 
 
 ```
+
+## Add Package
+
+`dotnet add package Newtonsoft.json --version 13.0.1`

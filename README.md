@@ -54,6 +54,17 @@ dotnet add reference ../CoWorkingApp.Model/CoWorkingApp.Model.csproj
 
 ```
 
+## Run App
+
+```bash
+# Root directory
+cd CoWorkingApp.App
+
+dotnet build
+
+dotnet run
+```
+
 ## Add Package
 
 `dotnet add package Newtonsoft.json --version 13.0.1`

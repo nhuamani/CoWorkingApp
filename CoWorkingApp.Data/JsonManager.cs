@@ -44,7 +44,7 @@ namespace CoWorkingApp.Data
                 streamWritter.WriteLine(jsonCollection);
                 streamWritter.Close();
             }
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
                 return false;
             }

@@ -36,7 +36,7 @@ namespace CoWorkingApp.Data
                     userCollection.Add(adminUser);
                     jsonManager.SaveCollection(userCollection);
                 }
-                catch (System.Exception ex)
+                catch (System.Exception)
                 {
                     return false;
                 }
